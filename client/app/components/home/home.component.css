@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+}
+
+.headerEmail {
+    position: absolute;
+    right: 100px;
+    padding: 8px;
+}
+
+.head {
+    float: left;
+}
+
+.container {
+    border: 2px solid #222;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+.head a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.headerOut {
+    position: absolute;
+    right: 0;
+    padding: 8px;
+    cursor: pointer;
+}
+
+    .headerOut:hover {
+        color: #0000ff;
+    }
+
+.head a:hover {
+    background: #778899;
+    color: #ffffff;
+}

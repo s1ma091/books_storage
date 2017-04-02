@@ -1,0 +1,121 @@
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid grey;
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+tr th::before {
+    content: '';
+    background: url(/app/components/books/d.svg) center no-repeat;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+tr th {
+    text-indent: 25px;
+    background: #a9a9a9;
+}
+
+.search {
+    float: right;
+    margin: 29px;
+    position: absolute;
+    right: 0;
+}
+
+    .search input {
+        border-radius: 5px;
+    }
+
+.act {
+    width: 35px;
+    height: 20px;
+    background: #ff0000;
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+    border: 2px solid #000000;
+    border-radius: 15px;
+}
+
+.edit {
+    background: #0000ff;
+}
+
+.book {
+    margin: 0 auto;
+    width: 538px;
+    padding: 20px;
+    text-align: center;
+}
+
+.author {
+    font-size: 30px;
+}
+
+.book div {
+    margin-bottom: 10px;
+}
+
+.book button {
+    border: 2px solid #000000;
+    margin-top: 20px;
+}
+
+.on {
+    border: 2px solid #000000;
+    border-radius: 30px;
+    text-indent: -25px;
+    font-size: 1.2em;
+    font-style: italic;
+    position: relative;
+}
+
+    .on:after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        display: block;
+        background: grey;
+        border: 2px solid black;
+        border-radius: 50%;
+        top: -2px;
+        right: -2px;
+    }
+
+.off {
+    border: 2px solid #696969;
+    border-radius: 30px;
+    text-indent: 25px;
+    font-size: 1.2em;
+    font-style: italic;
+    position: relative;
+    background: #d3d3d3;
+}
+
+    .off:after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        display: block;
+        background: #d3d3d3;
+        border: 2px solid #696969;
+        border-radius: 50%;
+        top: -2px;
+        left: -2px;
+    }
+
+.tabColor {
+    background: #d3d3d3;
+}

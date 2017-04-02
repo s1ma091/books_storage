@@ -1,0 +1,39 @@
+<home></home>
+<div class="title">ADD</div>
+<form #myForm="ngForm" class="form" novalidate>
+    <input type="file" id="file" name='fileData' [(ngModel)]="fileData" placeholder="add" (change)='addFile($event)' />
+    <div class="formadd">
+        <input class="form-control" name="author" [(ngModel)]="author" placeholder="author" required />
+    </div>
+    <div class="formadd">
+        <input class="form-control" type="text" name="title" [(ngModel)]='title' placeholder="title"
+               required />
+    </div>
+    <div class="formadd">
+        <textarea name="description" [(ngModel)]='description' rows="12" cols="40" placeholder="description" required></textarea>
+    </div>
+    <div>
+        <span>status</span>
+        <select name="status" class="formadd" [(ngModel)]='status'>
+            <option value="on">On</option>
+            <option value="off">Off</option>
+        </select>
+        <span>raiting</span>
+        <select name="raiting" class="formadd" [(ngModel)]='raiting'>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
+        </select>
+    </div>
+    <div>
+        <div class="but1"><button class="btn-default" (click)='del()'>Cansel</button></div>
+        <div class="but">
+            <button [disabled]="myForm.invalid"
+                    class="btn btn-default" (click)="addBook(myForm)">
+                Submit
+            </button>
+        </div>
+    </div>
+</form>

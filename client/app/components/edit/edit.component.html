@@ -1,0 +1,42 @@
+<home></home>
+<div class="title">EDIT</div>
+<form #myForm="ngForm" class="form" *ngFor="let book of books" novalidate>
+    <input type="file" name='fileData' (change)='addFile($event)' />
+    <div class="formadd">
+        <input class="form-control" name="author" [(ngModel)]="book.author" placeholder="author" required />
+    </div>
+    <div class="formadd">
+        <input class="form-control" type="text" name="title" [(ngModel)]='book.title' placeholder="title"
+               required />
+    </div>
+    <div class="formadd">
+        <textarea name="description" [(ngModel)]='book.description' rows="12" cols="40" placeholder="description" required></textarea>
+    </div>
+    <div>
+        <span>status:</span>
+        <select name="status" class="formadd" [(ngModel)]='book.status'>
+            <option disabled value="">status</option>
+            <option value='on'><div>on</div></option>
+            <option value='off'>Off</option>
+        </select>
+        <span>raiting:</span>
+        <select name="raiting" class="formadd" [(ngModel)]='book.raiting'>
+            <option disabled value="">raiting</option>
+            <option value='1'></option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
+
+        </select>
+    </div>
+    <div>
+        <div class="but1"><button class="btn-default" (click)='del()'>Cansel</button></div>
+        <div class="but">
+            <button [disabled]="myForm.invalid"
+                    class="btn btn-default" (click)="editBook(book)">
+                Submit
+            </button>
+        </div>
+    </div>
+</form>

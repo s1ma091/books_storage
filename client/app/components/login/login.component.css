@@ -1,0 +1,39 @@
+input.ng-touched.ng-invalid {
+    border: solid #ff0000 2px;
+}
+
+input.ng-touched.ng-valid {
+    border: solid #008000 2px;
+}
+
+.login {
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 2px solid #000000;
+}
+
+.form-group {
+    margin: 40px;
+}
+
+.form-group input {
+    float: right;
+    width: 200px;
+    }
+
+.but {
+    float: right;
+    margin-right: 10px;
+}
+
+.but1 {
+    float: left;
+    margin-left: 10px;
+}
+
+.header {
+    font-size: 25px;
+    text-align: center;
+}

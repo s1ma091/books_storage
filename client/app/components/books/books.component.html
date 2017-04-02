@@ -1,0 +1,39 @@
+<home></home>
+<form class="search">
+    <input type="text" class="searchPl" name="search" placeholder="search" (keyup)="search($event)">
+    <input type="submit" name="buttonsearch" class="buttonsearch" value="clear" (click)=reset()>
+</form>
+<table>
+    <thead>
+        <tr>
+            <th (click)="sorting('author')">№</th>
+            <th (click)="sorting('author')">Author</th>
+            <th (click)="sorting('title')">Title</th>
+            <th (click)="sorting('raiting')">Book Raiting</th>
+            <th (click)="sorting('status')">Status</th>
+            <th (click)="sorting('author')">Actions</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let tas of (tasks) | SearchIn: val | SortIn: param; let i = index">
+        <tr (click)=showBook(i) (click)=elStyle($event)>
+            <td>{{i+1}}</td>
+            <td>{{tas.author }}</td>
+            <td>{{tas.title}}</td>
+            <td>{{tas.raiting}}</td>
+            <td><div [ngClass]='{off:tas.status === "off", on:tas.status === "on"}'>{{tas.status}}</div></td>
+            <td>
+                <div class="act edit" (click)=goToEdit(tas._id)>edit</div>
+                <div class="act del" (click)=delBook(tas._id)>del</div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="book" [hidden]='!blockInfo.author'>
+    <div class="blockInfo">
+        <div class="author">{{blockInfo.author}} - {{blockInfo.title}}</div>
+        <div class="raiting">{{blockInfo.raiting}}</div>
+        <div class="date">{{blockInfo.date | date:'fullDate'}}</div>
+        <div class="description">{{blockInfo.description}}</div>
+        <button class="btn" (click)=downLoad(blockInfo.fileData)>download</button>
+    </div>
+</div>
